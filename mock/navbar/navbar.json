@@ -1,0 +1,82 @@
+{
+    "title" : "header",
+    "collapse" : true,
+    "leftItems" : [
+        {
+            "id": 1,
+            "name": "Home",
+            "path": "",
+            "component": "",
+            "useAsDefault": true,
+            "children": []
+        },
+        {
+            "id": 2,
+            "name": "Page 1",
+            "path": "",
+            "component": "",
+            "useAsDefault": true,
+            "children": [
+                {
+                    "id": 3,
+                    "name": "SubPage 1",
+                    "path": "",
+                    "component": "",
+                    "useAsDefault": true,
+                    "children": []
+                },
+                {
+                    "id": 4,
+                    "name": "SubPage 2",
+                    "path": "",
+                    "component": "",
+                    "useAsDefault": true,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Page 2",
+            "path": "",
+            "component": "",
+            "useAsDefault": true,
+            "children": []
+        }
+    ],
+    "rightItems" : [
+    {
+        "id": 6,
+        "name": "Left!",
+        "path": "",
+        "component": "",
+        "useAsDefault": true,
+        "children": []
+    },
+    {
+        "id": 7,
+        "name": "LPage",
+        "path": "",
+        "component": "",
+        "useAsDefault": true,
+        "children": [
+            {
+                "id": 8,
+                "name": "SubPage 1",
+                "path": "",
+                "component": "",
+                "useAsDefault": true,
+                "children": []
+            },
+            {
+                "id": 9,
+                "name": "SubPage 2",
+                "path": "",
+                "component": "",
+                "useAsDefault": true,
+                "children": []
+            }
+        ]
+    }
+    ]
+}

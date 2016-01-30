@@ -1,0 +1,11 @@
+<ol *ngIf="type === 0">
+    <li>ORDERED</li>
+</ol>
+<ul *ngIf="type === 1">
+    <li>UNORDERED</li>
+</ul>
+<dl *ngIf="type === 2">
+    <dt>DESCRIPTION</dt>
+    <dd>    - Description</dd>
+</dl>
+{{type}}

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Responsive Toggler -->
+        <div *ngIf="coreObj" class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" (click)="onSelect(defaultNav)">{{coreObj.title}}</a>
+        </div>
+        <!-- Responsive Navigation -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul *ngIf="navObj && navObj.leftItems" class="nav navbar-nav">
+                <li *ngIf="nav.children.length <= 0" *ngFor="#nav of navObj.leftItems" [class.active]="isNavSelected(nav)">
+                    <a (click)="onSelect(nav)">{{nav.name}}</a>
+                </li>
+                <li *ngIf="nav.children.length > 0" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{nav.name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="#child of nav.children" [class.active]="isNavSelected(child)">
+                            <a (click)="onSelect(child)">{{child.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul *ngIf="navObj && navObj.rightItems" class="nav navbar-nav navbar-right">
+                <li *ngFor="#nav of navObj.rightItems" [class.active]="isNavSelected(nav)">
+                    <a *ngIf="nav.children.length <= 0" (click)="onSelect(nav)">{{nav.name}}</a>
+                </li>
+                <li *ngIf="nav.children.length > 0" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{nav.name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="#child of nav.children" [class.active]="isNavSelected(child)">
+                            <a (click)="onSelect(child)">{{child.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
