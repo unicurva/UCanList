@@ -1,4 +1,5 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', '../../core/element.objects'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,33 +9,36 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var ViewItem;
+    var core_1, element_objects_1;
+    var NavbarComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (element_objects_1_1) {
+                element_objects_1 = element_objects_1_1;
             }],
         execute: function() {
-            ViewItem = (function () {
-                function ViewItem() {
+            NavbarComponent = (function () {
+                function NavbarComponent() {
                 }
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', Array)
-                ], ViewItem.prototype, "children", void 0);
-                ViewItem = __decorate([
+                    __metadata('design:type', element_objects_1.Element)
+                ], NavbarComponent.prototype, "shape", void 0);
+                NavbarComponent = __decorate([
                     core_1.Component({
-                        selector: 'view-item',
-                        templateUrl: 'app/src/component/core/list/view-item.html',
-                        directives: [ViewItem]
+                        selector: 'bs-navbar',
+                        templateUrl: 'app/src/component/bootstrap/navbar/navbar.html',
+                        directives: []
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ViewItem);
-                return ViewItem;
-            })();
-            exports_1("ViewItem", ViewItem);
+                ], NavbarComponent);
+                return NavbarComponent;
+            }());
+            exports_1("NavbarComponent", NavbarComponent);
         }
     }
 });
-//# sourceMappingURL=view-item.component.js.map
+//# sourceMappingURL=navbar.component.js.map

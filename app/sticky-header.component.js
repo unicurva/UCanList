@@ -1,4 +1,5 @@
 System.register(['angular2/core', 'angular2/router', './src/core/app-core.service', './src/nav/nav.service'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72,7 +73,7 @@ System.register(['angular2/core', 'angular2/router', './src/core/app-core.servic
                     __metadata('design:paramtypes', [app_core_service_1.AppCoreService, nav_service_1.NavigationService, router_1.Router])
                 ], StickyHeaderComponent);
                 return StickyHeaderComponent;
-            })();
+            }());
             exports_1("StickyHeaderComponent", StickyHeaderComponent);
         }
     }

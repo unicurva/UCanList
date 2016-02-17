@@ -27,7 +27,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     this.http = http;
                 }
                 NavigationService.prototype.getNavigation = function () {
-                    return Rx_1.Observable.forkJoin(this.http.get('mock/core/core.json').map(function (res) { return res.json(); }), this.http.get('mock/navbar/navbar.json').map(function (res) { return res.json(); }));
+                    return Rx_1.Observable.forkJoin(this.http.get('mock/core/dropdown.json').map(function (res) { return res.json(); }), this.http.get('mock/navbar/navbar.json').map(function (res) { return res.json(); }));
                 };
                 NavigationService = __decorate([
                     core_1.Injectable(), 

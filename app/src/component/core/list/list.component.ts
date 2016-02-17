@@ -2,10 +2,10 @@ import {Component, Input, forwardRef} from 'angular2/core';
 import {ElementComponent} from '../element.component';
 import {Element} from '../element.objects';
 @Component({
-    selector: 'view-table',
-    templateUrl: 'app/src/component/core/table/table.html',
+    selector: 'view-list',
+    templateUrl: 'app/src/component/core/list/list.html',
     directives: [(forwardRef(() => ElementComponent))]
 })
-export class TableComponent {
+export class ListComponent {
     @Input() shape: Element;
 }

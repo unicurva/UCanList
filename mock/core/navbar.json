@@ -1,0 +1,103 @@
+{
+    "id": "mainHeader",
+    "text": "U-Can-List",
+    "type": "bs-navbar",
+    "subtype": "down",
+    "class": { "container": "", "button": "btn-info btn-sm", "image": "", "list": "" },
+    "expanded": true,
+    "selected": false,
+    "icon": "wrench",
+    "items": [
+        {
+            "type": "link",
+            "text": "Mayuri Link",
+            "action": "http://www.google.com"
+        },
+        {
+            "type": "dropdown",
+            "text": "Something Linked",
+            "action": "#",
+            "items" : [
+                {
+                    "type": "li",
+                    "text": "link 1",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 2",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 5",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 6",
+                    "action": "#"
+                },
+                {
+                    "type": "separator",
+                    "class": "divider"
+                },
+                {
+                    "type": "li",
+                    "text": "link 7",
+                    "action": "#"
+                }
+            ]
+        },
+        {
+            "type": "dropdown",
+            "text": "My Dropdown",
+            "action": "#",
+            "items" : [
+                {
+                    "type": "li",
+                    "text": "link 1",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 2",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 3",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 4",
+                    "action": "#"
+                },
+                {
+                    "type": "separator",
+                    "class": "divider"
+                },
+                {
+                    "type": "li",
+                    "text": "link 5",
+                    "action": "#"
+                },
+                {
+                    "type": "li",
+                    "text": "link 6",
+                    "action": "#"
+                },
+                {
+                    "type": "separator",
+                    "class": "divider"
+                },
+                {
+                    "type": "li",
+                    "text": "link 7",
+                    "action": "#"
+                }
+            ]
+        }
+    ]
+}

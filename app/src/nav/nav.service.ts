@@ -7,7 +7,7 @@ export class NavigationService {
     constructor(private http:Http) { }
     getNavigation() {
         return Observable.forkJoin(
-            this.http.get('mock/core/core.json').map((res:Response) => res.json()),
+            this.http.get('mock/core/dropdown.json').map((res:Response) => res.json()),
             this.http.get('mock/navbar/navbar.json').map((res:Response) => res.json())
         );
     }

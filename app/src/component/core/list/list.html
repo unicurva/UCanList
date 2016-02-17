@@ -1,0 +1,15 @@
+<ul *ngIf="!shape.meta.listType || shape.meta.listType === 'ul'" [attr.aria-labelledby]="shape.meta.ariaLabelledBy" [class]="shape.meta.class">
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</ul>
+<ol *ngIf="shape.meta.listType === 'ol'" [attr.aria-labelledby]="shape.meta.ariaLabelledBy" [class]="shape.meta.class">
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</ol>
+<dl *ngIf="shape.meta.listType === 'dl'" [attr.aria-labelledby]="shape.meta.ariaLabelledBy" [class]="shape.meta.class">
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</dl>

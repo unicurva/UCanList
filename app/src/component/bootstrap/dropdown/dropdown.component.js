@@ -1,4 +1,5 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', '../../core/element.objects'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,40 +9,36 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var ListViewComponent, ListType;
+    var core_1, element_objects_1;
+    var DropdownComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (element_objects_1_1) {
+                element_objects_1 = element_objects_1_1;
             }],
         execute: function() {
-            ListViewComponent = (function () {
-                function ListViewComponent() {
-                    this.type = ListType.UNORDERED;
+            DropdownComponent = (function () {
+                function DropdownComponent() {
                 }
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', Number)
-                ], ListViewComponent.prototype, "type", void 0);
-                ListViewComponent = __decorate([
+                    __metadata('design:type', element_objects_1.Element)
+                ], DropdownComponent.prototype, "shape", void 0);
+                DropdownComponent = __decorate([
                     core_1.Component({
-                        selector: 'list-view',
-                        templateUrl: 'app/src/component/core/list/list-view.html',
-                        directives: [ListViewComponent]
+                        selector: 'bs-dropdown',
+                        templateUrl: 'app/src/component/bootstrap/dropdown/dropdown.html',
+                        directives: []
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ListViewComponent);
-                return ListViewComponent;
-            })();
-            exports_1("ListViewComponent", ListViewComponent);
-            (function (ListType) {
-                ListType[ListType["ORDERED"] = 0] = "ORDERED";
-                ListType[ListType["UNORDERED"] = 1] = "UNORDERED";
-                ListType[ListType["DESCRIPTION"] = 2] = "DESCRIPTION";
-            })(ListType || (ListType = {}));
-            exports_1("ListType", ListType);
+                ], DropdownComponent);
+                return DropdownComponent;
+            }());
+            exports_1("DropdownComponent", DropdownComponent);
         }
     }
 });
-//# sourceMappingURL=list-view.component.js.map
+//# sourceMappingURL=dropdown.component.js.map

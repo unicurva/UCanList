@@ -1,0 +1,18 @@
+<template [ngIf]="shape.type === 'div'">
+    <view-div *ngIf="shape" [shape]="shape"></view-div>
+</template>
+<template [ngIf]="shape.type === 'list'">
+    <view-list *ngIf="shape" [shape]="shape"></view-list>
+</template>
+<template [ngIf]="shape.type === 'li'">
+    <view-item *ngIf="shape" [shape]="shape"></view-item>
+</template>
+<template [ngIf]="shape.type === 'button'">
+    <view-button *ngIf="shape" [shape]="shape"></view-button>
+</template>
+<template [ngIf]="shape.type === 'bs-dropdown'">
+    <bs-dropdown *ngIf="shape" [shape]="shape"></bs-dropdown>
+</template>
+<template [ngIf]="shape.type === 'bs-navbar'">
+    <bs-navbar *ngIf="shape" [shape]="shape"></bs-navbar>
+</template>

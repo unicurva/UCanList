@@ -1,0 +1,6 @@
+<button [class]="shape.meta.class" type="button" [id]="shape.meta.id" [attr.data-toggle]="shape.meta.dataToggle" [attr.aria-haspopup]="shape.meta.ariaHasPopup" [attr.aria-expanded]="shape.meta.ariaExpanded">
+    {{shape.meta.title}}
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</button>

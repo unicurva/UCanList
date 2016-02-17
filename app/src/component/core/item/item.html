@@ -1,0 +1,9 @@
+<template [ngIf]="!type || type === 'li'">
+    <li [attr.role]="shape.meta.role" [class]="shape.meta.class">{{shape.meta.title}}</li>
+</template>
+<template [ngIf]="type === 'dd'">
+    <dd [attr.role]="shape.meta.role" [class]="shape.meta.class">{{shape.meta.title}}</dd>
+</template>
+<template [ngIf]="type === 'dt'">
+    <dt [attr.role]="shape.meta.role" [class]="shape.meta.class">{{shape.meta.title}}</dt>
+</template>

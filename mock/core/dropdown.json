@@ -3,14 +3,14 @@
     "text": "Mayuri's Button",
     "type": "bs-dropdown",
     "subtype": "down",
-    "class": { "container": "", "button": "btn-default btn-sm", "image": "", "list": "" },
+    "class": { "container": "", "button": "btn-primary btn-md", "image": "", "list": "" },
     "expanded": true,
     "selected": false,
     "icon": "wrench",
     "items": [
         {
             "type": "li",
-            "text": "Mayuri Link",
+            "text": "Link 1",
             "action": "http://www.google.com"
         },
         {
@@ -19,12 +19,12 @@
         },
         {
             "type": "li",
-            "text": "What Link?",
+            "text": "Link 2",
             "action": "#"
         },
         {
             "type": "li",
-            "text": "Something Linked",
+            "text": "Link 3",
             "action": "#"
         },
         {
@@ -33,7 +33,7 @@
         },
         {
             "type": "li",
-            "text": "Separated Link",
+            "text": "Link 4",
             "action": "#"
         }
     ]

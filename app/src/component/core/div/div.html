@@ -1,0 +1,10 @@
+<div *ngIf="!shape.meta.divType || shape.meta.divType === 'div'" [style]="shape.meta.style" [class]="shape.meta.class">
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</div>
+<span *ngIf="shape.meta.divType === 'span'" [style]="shape.meta.style" [class]="shape.meta.class">
+    <template [ngIf]="shape.children" ngFor #child [ngForOf]="shape.children" #i="index">
+        <element *ngIf="child" [shape]="child"></element>
+    </template>
+</span>

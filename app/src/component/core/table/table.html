@@ -1,0 +1,9 @@
+<template [ngIf]="!type || type === 'li'">
+    <li>Hello LI</li>
+</template>
+<template [ngIf]="type === 'dd'">
+    <dd>Hello DD</dd>
+</template>
+<template [ngIf]="type === 'dt'">
+    <dt>Hello DT</dt>
+</template>
