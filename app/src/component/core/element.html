@@ -16,3 +16,7 @@
 <template [ngIf]="shape.type === 'bs-navbar'">
     <bs-navbar *ngIf="shape" [shape]="shape"></bs-navbar>
 </template>
+<template [ngIf]="shape.type === 'bs-grid'">
+    <bs-grid *ngIf="shape" [shape]="shape"></bs-grid>
+</template>
+

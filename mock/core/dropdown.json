@@ -1,7 +1,7 @@
 {
     "id": "mydrop",
     "text": "Mayuri's Button",
-    "type": "bs-dropdown",
+    "type": "bs-grid",
     "subtype": "down",
     "class": { "container": "", "button": "btn-primary btn-md", "image": "", "list": "" },
     "expanded": true,
