@@ -19,4 +19,20 @@
 <template [ngIf]="shape.type === 'bs-grid'">
     <bs-grid *ngIf="shape" [shape]="shape"></bs-grid>
 </template>
+<template [ngIf]="shape.type === 'bs-pager'">
+    <bs-pager *ngIf="shape" [shape]="shape"></bs-pager>
+</template>
+<template [ngIf]="shape.type === 'bs-table'">
+    <bs-table *ngIf="shape" [shape]="shape"></bs-table>
+</template>
 
+<bs-dropdown id="hi"
+             text="WOO HOO Button!"
+             type="bs-dropdown"
+             subtype="down"
+             styleClass='{ "button": "btn-primary btn-md" }'
+             expanded="true"
+             selected="false"
+             icons="wrench"
+             items='[{ "type": "li", "text": "Link 1", "action": "http://www.google.com" }]'>
+</bs-dropdown>

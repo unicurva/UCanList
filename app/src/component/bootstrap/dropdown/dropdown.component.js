@@ -1,5 +1,9 @@
 System.register(['angular2/core', '../../core/element.objects'], function(exports_1) {
-    "use strict";
+    var __extends = (this && this.__extends) || function (d, b) {
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,13 +24,11 @@ System.register(['angular2/core', '../../core/element.objects'], function(export
                 element_objects_1 = element_objects_1_1;
             }],
         execute: function() {
-            DropdownComponent = (function () {
+            DropdownComponent = (function (_super) {
+                __extends(DropdownComponent, _super);
                 function DropdownComponent() {
+                    _super.apply(this, arguments);
                 }
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', element_objects_1.Element)
-                ], DropdownComponent.prototype, "shape", void 0);
                 DropdownComponent = __decorate([
                     core_1.Component({
                         selector: 'bs-dropdown',
@@ -36,7 +38,7 @@ System.register(['angular2/core', '../../core/element.objects'], function(export
                     __metadata('design:paramtypes', [])
                 ], DropdownComponent);
                 return DropdownComponent;
-            }());
+            })(element_objects_1.AbstractElement);
             exports_1("DropdownComponent", DropdownComponent);
         }
     }

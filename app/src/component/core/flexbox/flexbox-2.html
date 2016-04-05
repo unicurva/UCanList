@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+        @charset "UTF-8";
+        header, footer, main {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #FFFFFF;
+            color: #333;
+            font-family: sans-serif;
+        }
+
+        .main-content {
+            max-width: 100%;
+            min-width: 320px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            font-weight: lighter;
+            margin: 1em 0;
+            line-height: 1;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        .flexbox {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 -2px;
+        }
+
+        .example__default {
+            color: #a00;
+        }
+
+        .flex {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 160px;
+            -ms-flex: 1 0 160px;
+            flex: 1 0 160px;
+            padding: 4px;
+            margin: 2px;
+            box-shadow: 0 0 0 2px inset;
+            background: #ddd;
+            text-align: center;
+            line-height: 1;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .example__flexfix {
+            color: #a60;
+        }
+
+        .example__flexfill {
+            color: #0a0;
+        }
+
+        .example__flexfill:before, .example__flexfill:after, .example__flexfix:before, .example__flexfix:after {
+            content: '';
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 160px;
+            -ms-flex: 1 0 160px;
+            flex: 1 0 160px;
+            margin: 0 2px;
+            -webkit-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+            box-shadow: 0 2px 0 #ddd inset, 0 -2px 0 #ddd inset, 0 4px 0 inset, 0 -4px 0 inset, 2px 0 0 inset, -2px 0 0 inset;
+            opacity: 0.5;
+            border-radius: 4px;
+            line-height: 0;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .example__flexfill:before, .example__flexfix:before {
+            content: '::before';
+            color: #bf9f40;
+        }
+        .example__flexfill:after, .example__flexfix:after {
+            content: '::after';
+            color: #8a40bf;
+        }
+
+        .\replaced {
+            content: '';
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 160px;
+            -ms-flex: 1 0 160px;
+            flex: 1 0 160px;
+            margin: 0 2px;
+            -webkit-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+            border-radius: 4px;
+            box-shadow: 0 2px 0 #ddd inset, 0 -2px 0 #ddd inset, 0 4px 0 inset, 0 -4px 0 inset, 2px 0 0 inset, -2px 0 0 inset;
+            opacity: 0.5;
+            line-height: 0;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .legend.example__flexfill {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .legend.example__flexfill:before {
+            content: '::before';
+        }
+        .legend.example__flexfill:after {
+            content: '::after';
+        }
+        .legend.example__flexfill:before, .legend.example__flexfill:after,
+        .legend.example__flexfill .\replaced {
+            line-height: normal;
+            opacity: 1;
+            text-align: center;
+            background: #ddd;
+            font-weight: bolder;
+            font-family: monospace;
+            padding: 10px;
+        }
+        .legend.example__flexfill .\replaced span {
+            font-weight: normal;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <main id="content" class="main-content">
+        <div class="flexbox example__default">
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+            <div class="flex">flexbox</div>
+        </div>
+    </main>
+
+</body>
+</html>

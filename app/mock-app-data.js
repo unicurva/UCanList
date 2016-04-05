@@ -1,5 +1,4 @@
 System.register([], function(exports_1) {
-    "use strict";
     var APPDATA;
     return {
         setters:[],

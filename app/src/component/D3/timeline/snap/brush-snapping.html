@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Brush Snapping</title>
+    <script src="../../../../../../node_modules/d3/d3.min.js"></script>
+    <style>
+        .axis text {
+            font: 10px sans-serif;
+            font-weight: bold;
+        }
+
+        .axis path {
+            display: none;
+        }
+
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .grid-background {
+            fill: #2969c2;
+        }
+
+        .grid2{
+            fill: #000000;
+        }
+
+        .grid line,
+        .grid path {
+            fill: none;
+            stroke: #fff;
+            shape-rendering: crispEdges;
+        }
+
+        .grid .minor.tick line {
+            stroke-opacity: .5;
+        }
+
+        .brush .extent {
+            fill: #FFFFFF;
+            stroke: #f0f8e9;
+            stroke-width: 8px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            fill-opacity: .40;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        var width = 1260,
+            height = 120,
+            aspect = width / height,
+            body = d3.select("body");
+
+        width = body.node().getBoundingClientRect().width;
+        d3.select(window)
+                .on("resize", function() {
+                    width = body.node().getBoundingClientRect().width;
+                    body.attr("width", width);
+                    body.attr("height", height);
+                    body.select("svg").remove();
+                    buildTimeNav(width, height)
+                });
+
+        function buildTimeNav(width, height)
+        {
+
+            var margin = {top: 4, right: 4, bottom: 40, left: 4},
+                    width = width - margin.left - margin.right,
+                    height = 120 - margin.top - margin.bottom;
+
+            var x = d3.time.scale()
+                    .domain([new Date(2016, 4, 1), new Date(2016, 4, 31) - 1])
+                    .range([0, width]);
+
+            var brush = d3.svg.brush()
+                    .x(x)
+                    .extent([new Date(2016, 4, 2), new Date(2016, 4, 3)])
+                    .on("brush", brushed);
+
+            var svg = d3.select("body").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            svg.append("rect")
+                    .attr("class", "grid-background")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .attr("rx", "4")
+                    .attr("ry", "4");
+
+            svg.append("g")
+                    .attr("class", "x grid")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.svg.axis()
+                            .scale(x)
+                            .orient("bottom")
+                            .ticks(d3.time.hours, 12)
+                            .tickSize(-height)
+                            .tickFormat(""))
+                    .selectAll(".tick")
+                    .classed("minor", function (d) {
+                        return d.getHours();
+                    });
+
+            svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.svg.axis()
+                            .scale(x)
+                            .orient("bottom")
+                            .ticks(d3.time.days)
+                            .tickPadding(2)
+                            .tickFormat(d3.time.format('%m/%d')))
+                    .selectAll("text")
+                    .attr("x", -2)
+                    .style("text-anchor", null);
+
+            var rangeValue = svg.append("text")
+                    .style("font", "12px sans-serif")
+                    .style("font-weight", "bold")
+                    .style("fill", "black")
+                    .attr("x", width / 2)
+                    .attr("y", height + 35)
+                    .attr("text-anchor", "middle")
+                    .text("Hello World");
+
+            var gBrush = svg.append("g")
+                    .attr("class", "brush")
+                    .call(brush);
+
+            gBrush.selectAll("rect")
+                    .attr("height", height + 22);
+
+
+            function brushed() {
+                var extent0 = brush.extent(),
+                        extent1;
+
+                // if dragging, preserve the width of the extent
+                if (d3.event.mode === "move") {
+                    var d0 = d3.time.day.round(extent0[0]),
+                            d1 = d3.time.day.offset(d0, Math.round((extent0[1] - extent0[0]) / 864e5));
+                    extent1 = [d0, d1];
+                }
+
+                // otherwise, if resizing, round both dates
+                else {
+                    extent1 = extent0.map(d3.time.day.round);
+
+                    // if empty when rounded, use floor & ceil instead
+                    if (extent1[0] >= extent1[1]) {
+                        extent1[0] = d3.time.day.floor(extent0[0]);
+                        extent1[1] = d3.time.day.ceil(extent0[1]);
+                    }
+                }
+
+                var format = d3.time.format("%x %X");
+                rangeValue.text(format(extent1[0]) + " <==> " + format(extent1[1]) + " W: " + width + " H: " + height);
+
+                d3.select(this).call(brush.extent(extent1));
+            }
+        }
+
+        buildTimeNav(width, height);
+    </script>
+
+</body>
+</html>

@@ -1,5 +1,4 @@
 System.register(['./app-core'], function(exports_1) {
-    "use strict";
     var app_core_1;
     var NAVIGATION, CORE;
     return {

@@ -1,5 +1,4 @@
 System.register([], function(exports_1) {
-    "use strict";
     var AppCore, AppNav;
     return {
         setters:[],
@@ -11,7 +10,7 @@ System.register([], function(exports_1) {
                     this.navigation = navigation;
                 }
                 return AppCore;
-            }());
+            })();
             exports_1("AppCore", AppCore);
             AppNav = (function () {
                 function AppNav(id, name, path, component, useAsDefault, children) {
@@ -23,7 +22,7 @@ System.register([], function(exports_1) {
                     this.children = children;
                 }
                 return AppNav;
-            }());
+            })();
             exports_1("AppNav", AppNav);
         }
     }

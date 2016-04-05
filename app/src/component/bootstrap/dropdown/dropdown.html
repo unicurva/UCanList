@@ -1,11 +1,11 @@
-<div class="drop{{shape.subtype}} {{shape.class.container}}">
-    <button type="button" id="{{shape.id}}" class="btn dropdown-toggle {{shape.class.button}}"
+<div class="drop{{shape.subtype}} {{shape.class?shape.class.container:''}}">
+    <button type="button" id="{{shape.id}}" class="btn dropdown-toggle {{shape.class?shape.class.button:''}}"
             data-toggle="dropdown" aria-haspopup="true"
             [attr.aria-expanded]="shape.expanded?'true':'false'">
         {{shape.text}}
-        <span class="glyphicon glyphicon-{{shape.icon}}" style="padding-left: 6px;" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-{{shape.icons[0]}}" style="padding-left: 6px;" aria-hidden="true"></span>
     </button>
-    <ul *ngIf="shape.items" class="dropdown-menu {{shape.class.list}}" [attr.aria-labelledby]="shape.id">
+    <ul *ngIf="shape.items" class="dropdown-menu {{shape.class?shape.class.list:''}}" [attr.aria-labelledby]="shape.id">
         <li *ngFor="#child of shape.items" [attr.role]="child.type === 'separator'?'separator':''" class="{{child.class}}">
             <a *ngIf="child.type !== 'separator'" href="{{child.action}}">{{child.text}}</a>
         </li>

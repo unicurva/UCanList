@@ -1,5 +1,4 @@
 System.register(['angular2/platform/browser', 'angular2/http', 'angular2/router', './src/nav/nav.service', './app.component', 'rxjs/add/operator/map'], function(exports_1) {
-    "use strict";
     var browser_1, http_1, router_1, nav_service_1, app_component_1;
     return {
         setters:[
